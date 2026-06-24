@@ -177,9 +177,9 @@ html {
   scrollbar-color: var(--color-hairline) var(--color-surface-soft);
 }
 
-/* Hide default cursor on desktop with fine pointer (mouse) */
+/* Hide default cursor on desktop with fine pointer (mouse) — only on pages with custom cursor */
 @media (pointer: fine) and (min-width: 768px) {
-  * {
+  [data-custom-cursor] * {
     cursor: none !important;
   }
 }

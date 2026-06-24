@@ -11,7 +11,7 @@ import RopeCharacter from "./components/RopeCharacter";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" data-custom-cursor>
       {/* Desktop-only interactive elements */}
       <div className="hidden md:block">
         <CustomCursor />
@@ -29,13 +29,13 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-3">
           <MagneticButton
-            href="#"
+            href="/contact"
             className="hidden sm:inline-flex items-center justify-center px-3 py-1.5 md:px-5 md:py-2 rounded-full bg-white text-black text-body-sm md:text-button border border-[var(--color-hairline)]"
           >
             Contact
           </MagneticButton>
           <MagneticButton
-            href="#"
+            href="/waitlist"
             className="items-center justify-center px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-black text-white text-body-sm md:text-button"
           >
             Join Waitlist
@@ -71,13 +71,13 @@ export default function Home() {
         <AnimatedSection variant="scale-up" delay={800}>
           <div className="flex flex-col sm:flex-row gap-4">
             <MagneticButton
-              href="#"
+              href="/waitlist"
               className="items-center justify-center px-7 py-3 rounded-full bg-black text-white text-button"
             >
               Get Early Access
             </MagneticButton>
             <MagneticButton
-              href="#"
+              href="/contact"
               className="items-center justify-center px-7 py-3 rounded-full bg-white text-black text-button border border-[var(--color-hairline)]"
             >
               Learn More
@@ -364,7 +364,7 @@ export default function Home() {
               of the creator economy.
             </p>
             <MagneticButton
-              href="#"
+              href="/waitlist"
               className="items-center justify-center px-8 py-3.5 rounded-full bg-white text-black text-button"
             >
               Join the Waitlist
