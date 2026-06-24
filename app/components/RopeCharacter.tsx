@@ -4,6 +4,18 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 type Expression = "neutral" | "wishful" | "excited" | "confused" | "scared" | "angry" | "sad" | "crying" | "jumping";
 
+const sparkleColors = ["#ff3d8b", "#dceeb1", "#c5b0f4", "#f4ecd6", "#c8e6cd", "#f3c9b6"];
+const sparklePositions = [
+  { x: 25, y: 15, size: 8, color: sparkleColors[0], duration: 0.7 },
+  { x: 55, y: 10, size: 10, color: sparkleColors[1], duration: 0.9 },
+  { x: 75, y: 25, size: 7, color: sparkleColors[2], duration: 0.8 },
+  { x: 35, y: 45, size: 11, color: sparkleColors[3], duration: 1.0 },
+  { x: 65, y: 50, size: 9, color: sparkleColors[4], duration: 0.75 },
+  { x: 20, y: 60, size: 8, color: sparkleColors[5], duration: 0.85 },
+  { x: 80, y: 40, size: 10, color: sparkleColors[0], duration: 0.95 },
+  { x: 45, y: 30, size: 7, color: sparkleColors[1], duration: 0.65 },
+];
+
 export default function RopeCharacter() {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [ropeDropped, setRopeDropped] = useState(false);
@@ -257,7 +269,7 @@ export default function RopeCharacter() {
       {/* Main puller */}
       <div className="absolute left-0 bottom-0" style={{
         transform: characterVisible
-          ? `translateY(${isJumping ? -20 + bounceY : 16 + bounceY}px)`
+          ? `translateY(${isJumping ? 8 + bounceY : 16 + bounceY}px)`
           : "translateY(240px)",
         transition: characterVisible
           ? "transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)"
@@ -285,7 +297,7 @@ export default function RopeCharacter() {
       {/* Companion 1 — plum */}
       <div className="absolute left-[115px] bottom-0" style={{
         transform: characterVisible
-          ? `translateY(${isJumping ? -15 : 20}px)`
+          ? `translateY(${isJumping ? 12 : 20}px)`
           : "translateY(200px)",
         transition: characterVisible ? "transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)" : "transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
         transitionDelay: characterVisible && !isJumping ? "0.2s" : "0.05s",
@@ -296,7 +308,7 @@ export default function RopeCharacter() {
       {/* Companion 2 — teal (the little one) */}
       <div className="absolute left-[80px] bottom-0" style={{
         transform: characterVisible
-          ? `translateY(${isJumping ? -25 : 50}px)`
+          ? `translateY(${isJumping ? 40 : 50}px)`
           : "translateY(180px)",
         transition: characterVisible ? "transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)" : "transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
         transitionDelay: characterVisible && !isJumping ? "0.4s" : "0.1s",
@@ -307,15 +319,15 @@ export default function RopeCharacter() {
       {/* Sparkles when jumping */}
       {isJumping && (
         <div className="absolute left-0 bottom-[50px] w-[200px] h-[250px] pointer-events-none">
-          {[...Array(8)].map((_, i) => (
+          {sparklePositions.map((sp, i) => (
             <div key={i} className="absolute" style={{
-              left: `${20 + Math.random() * 60}%`,
-              top: `${10 + Math.random() * 60}%`,
-              width: 6 + Math.random() * 6,
-              height: 6 + Math.random() * 6,
+              left: `${sp.x}%`,
+              top: `${sp.y}%`,
+              width: sp.size,
+              height: sp.size,
               borderRadius: "50%",
-              backgroundColor: ["#ff3d8b", "#dceeb1", "#c5b0f4", "#f4ecd6", "#c8e6cd", "#f3c9b6"][i % 6],
-              animation: `sparkle ${0.6 + Math.random() * 0.6}s ease-out forwards`,
+              backgroundColor: sp.color,
+              animation: `sparkle ${sp.duration}s ease-out forwards`,
               animationDelay: `${i * 0.08}s`,
               opacity: 0,
             }} />
