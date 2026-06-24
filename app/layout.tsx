@@ -13,10 +13,63 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
   title: "Opinia — Turn Predictions Into Real-World Rewards",
   description:
     "Predict the future of your favorite creators. Earn exclusive rewards, VIP show tickets and access exclusive content by showing your fandom.",
+  keywords: [
+    "Opinia",
+    "predictions",
+    "creator economy",
+    "prediction market",
+    "creators",
+    "rewards",
+    "VIP tickets",
+    "exclusive content",
+    "fandom",
+    "web3",
+    "Ramanshu Sharan Mishra",
+    "Ramanshu",
+  ],
+  authors: [
+    { name: "Ramanshu Sharan Mishra", url: "https://www.ramspace.fun" },
+  ],
+  creator: "Opinia",
+  metadataBase: new URL("https://opinia.xyz"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Opinia — Turn Predictions Into Real-World Rewards",
+    description:
+      "Predict the future of your favorite creators. Earn exclusive rewards, VIP show tickets and access exclusive content by showing your fandom.",
+    url: "https://opinia.slugfeast.fun",
+    siteName: "Opinia",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Opinia — Predict the future of your favorite creators",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Opinia — Turn Predictions Into Real-World Rewards",
+    description:
+      "Predict the future of your favorite creators. Earn exclusive rewards, VIP show tickets and access exclusive content by showing your fandom.",
+    site: "@RamanshuSharan",
+    creator: "@RamanshuSharan",
+    images: ["/og.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
