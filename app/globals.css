@@ -2,7 +2,27 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+
+  /* Design system colors */
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-ink: #000000;
+  --color-canvas: #ffffff;
+  --color-inverse-canvas: #000000;
+  --color-inverse-ink: #ffffff;
+  --color-hairline: #e6e6e6;
+  --color-hairline-soft: #f1f1f1;
+  --color-surface-soft: #f7f7f5;
+  --color-block-lime: #dceeb1;
+  --color-block-lilac: #c5b0f4;
+  --color-block-cream: #f4ecd6;
+  --color-block-pink: #efd4d4;
+  --color-block-mint: #c8e6cd;
+  --color-block-coral: #f3c9b6;
+  --color-block-navy: #1f1d3d;
+  --color-accent-magenta: #ff3d8b;
+  --color-semantic-success: #1ea64a;
 }
 
 @theme inline {
@@ -12,15 +32,200 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Utility classes for design system */
+.text-display-xl {
+  font-size: 86px;
+  font-weight: 340;
+  line-height: 1.00;
+  letter-spacing: -1.72px;
+  font-feature-settings: "kern";
+}
+
+.text-display-lg {
+  font-size: 64px;
+  font-weight: 340;
+  line-height: 1.10;
+  letter-spacing: -0.96px;
+  font-feature-settings: "kern";
+}
+
+.text-headline {
+  font-size: 26px;
+  font-weight: 540;
+  line-height: 1.35;
+  letter-spacing: -0.26px;
+  font-feature-settings: "kern";
+}
+
+.text-subhead {
+  font-size: 26px;
+  font-weight: 340;
+  line-height: 1.35;
+  letter-spacing: -0.26px;
+  font-feature-settings: "kern";
+}
+
+.text-body-lg {
+  font-size: 20px;
+  font-weight: 330;
+  line-height: 1.40;
+  letter-spacing: -0.14px;
+  font-feature-settings: "kern";
+}
+
+.text-body {
+  font-size: 18px;
+  font-weight: 320;
+  line-height: 1.45;
+  letter-spacing: -0.26px;
+  font-feature-settings: "kern";
+}
+
+.text-body-sm {
+  font-size: 16px;
+  font-weight: 330;
+  line-height: 1.45;
+  letter-spacing: -0.14px;
+  font-feature-settings: "kern";
+}
+
+.text-eyebrow {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.30;
+  letter-spacing: 0.54px;
+  font-feature-settings: "kern";
+  text-transform: uppercase;
+}
+
+.text-caption {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.00;
+  letter-spacing: 0.60px;
+  font-feature-settings: "kern";
+  text-transform: uppercase;
+}
+
+.text-button {
+  font-size: 20px;
+  font-weight: 480;
+  line-height: 1.40;
+  letter-spacing: -0.10px;
+  font-feature-settings: "kern";
+}
+
+/* Prediction card graph animations */
+@keyframes pulse-green {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes sweatDrop {
+  0% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(3px); opacity: 0.8; }
+  100% { transform: translateY(6px); opacity: 0; }
+}
+
+@keyframes tearFall {
+  0% { transform: translateY(0); opacity: 0.7; }
+  70% { transform: translateY(12px); opacity: 0.5; }
+  100% { transform: translateY(18px); opacity: 0; }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(0) translateY(0); opacity: 1; }
+  50% { transform: scale(1.2) translateY(-15px); opacity: 1; }
+  100% { transform: scale(0) translateY(-30px); opacity: 0; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 50px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink);
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-hairline) var(--color-surface-soft);
+}
+
+/* Hide default cursor on desktop with fine pointer (mouse) */
+@media (pointer: fine) and (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-block-lilac);
+  color: var(--color-ink);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .text-display-xl {
+    font-size: 48px;
+    letter-spacing: -0.96px;
+  }
+
+  .text-display-lg {
+    font-size: 36px;
+    letter-spacing: -0.54px;
+  }
+
+  .text-headline {
+    font-size: 22px;
+  }
+
+  .text-subhead {
+    font-size: 20px;
+  }
 }
