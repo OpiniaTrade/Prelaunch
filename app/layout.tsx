@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     { name: "Ramanshu Sharan Mishra", url: "https://www.ramspace.fun" },
   ],
   creator: "Opinia",
-  metadataBase: new URL("https://opinia.xyz"),
+  metadataBase: new URL("https://www.opinia.slugfeast.fun"),
   alternates: {
     canonical: "/",
   },
