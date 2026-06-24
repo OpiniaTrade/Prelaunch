@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "https://opinia.slugfeast.fun/og.png",
         width: 1200,
         height: 630,
         alt: "Opinia — Predict the future of your favorite creators",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "Predict the future of your favorite creators. Earn exclusive rewards, VIP show tickets and access exclusive content by showing your fandom.",
     site: "@RamanshuSharan",
     creator: "@RamanshuSharan",
-    images: ["/og.png"],
+    images: ["https://opinia.slugfeast.fun/og.png"],
   },
   icons: {
     icon: "/favicon.ico",
