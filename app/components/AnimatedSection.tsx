@@ -48,7 +48,7 @@ export default function AnimatedSection({
     return () => observer.disconnect();
   }, [threshold]);
 
-  // Scroll-based opacity: fade in as element enters, fade out as it exits
+  // Scroll-based opacity: gentle fade only when nearly off-screen
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -66,15 +66,13 @@ export default function AnimatedSection({
         const normalizedDistance =
           Math.abs(elementCenter - viewportCenter) / (viewportHeight / 2);
 
-        // Opacity: 1 when centered, fades toward edges
-        // Start fading after 60% from center
-        const fadeStart = 0.6;
+        // Opacity: 1 when anywhere in the central 85%, gentle fade only at edges
+        const fadeStart = 0.85;
         let opacity = 1;
         if (normalizedDistance > fadeStart) {
-          opacity = Math.max(
-            0,
-            1 - (normalizedDistance - fadeStart) / (1 - fadeStart)
-          );
+          // Gentle quadratic fade — never drops below 0.3
+          const fadeProgress = (normalizedDistance - fadeStart) / (1 - fadeStart);
+          opacity = Math.max(0.3, 1 - fadeProgress * 0.7);
         }
 
         setScrollOpacity(opacity);

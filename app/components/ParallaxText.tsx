@@ -33,12 +33,13 @@ export default function ParallaxText({
         // Parallax offset
         setOffset(distance * speed);
 
-        // Opacity: full at center, fades as element moves away from center
-        // Normalized distance: 0 at center, 1 at edge of viewport
+        // Opacity: full at center, gentle fade only near edges
         const normalizedDistance =
           Math.abs(distance) / (viewportHeight / 2);
-        // Clamp opacity between 0.1 and 1
-        const newOpacity = Math.max(0.1, 1 - normalizedDistance * 0.8);
+        // Only start fading past 80% from center, minimum 0.5
+        const newOpacity = normalizedDistance > 0.8
+          ? Math.max(0.5, 1 - (normalizedDistance - 0.8) * 2.5)
+          : 1;
         setOpacity(newOpacity);
       });
     };

@@ -360,8 +360,7 @@ export default function Home() {
               </h2>
             </ParallaxText>
             <p className="text-body-lg text-[var(--color-inverse-ink)] opacity-80 max-w-xl mx-auto mb-10">
-              Join the waitlist and get early access to Opinia. Shape the future
-              of the creator economy.
+              Join the waitlist and get early access to Opinia.<br/> Help us in building the perfect platform to shape the future of the creator economy.
             </p>
             <MagneticButton
               href="/waitlist"
