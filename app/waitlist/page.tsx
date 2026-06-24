@@ -173,14 +173,24 @@ export default function WaitlistPage() {
           <div className="mt-12 pt-8 border-t border-[var(--color-hairline)]">
             <p className="text-caption mb-4 opacity-60">CONNECT WITH US</p>
             <div className="flex flex-col gap-3">
-              <a
-                href={`https://twitter.com/${(process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@opinia").replace("@", "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-body-lg hover:text-[var(--color-accent-magenta)] transition-colors"
-              >
-                𝕏 {process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@opinia"}
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={`https://twitter.com/${(process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@opinia").replace("@", "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-body-lg hover:text-[var(--color-accent-magenta)] transition-colors"
+                >
+                  𝕏 {process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@opinia"}
+                </a>
+                <a
+                  href={`https://twitter.com/${(process.env.NEXT_PUBLIC_TWITTER_HANDLE_2 || "@opinia_co").replace("@", "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-body-lg hover:text-[var(--color-accent-magenta)] transition-colors"
+                >
+                  𝕏 {process.env.NEXT_PUBLIC_TWITTER_HANDLE_2 || "@opinia_co"}
+                </a>
+              </div>
               <a
                 href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "hello@opinia.xyz"}`}
                 className="text-body-lg hover:text-[var(--color-accent-magenta)] transition-colors"
