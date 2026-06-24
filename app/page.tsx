@@ -264,8 +264,8 @@ export default function Home() {
         <AnimatedSection variant="scale-up" className="w-full">
           <div className="rounded-[24px] bg-[var(--color-block-lilac)] p-12 md:p-16 text-center">
             <p className="text-eyebrow mb-4">WELCOME TO THE FUTURE</p>
-            <ParallaxText speed={0.15}>
-              <h2 className="text-display-lg max-w-3xl mx-auto mb-6">
+            <ParallaxText speed={0.05}>
+              <h2 className="text-display-lg max-w-3xl mx-auto my-10">
                 You&apos;re not just a consumer — you&apos;re an{" "}
                 <span className="text-[var(--color-accent-magenta)]">
                   active participant
@@ -354,8 +354,8 @@ export default function Home() {
             <p className="text-eyebrow text-[var(--color-inverse-ink)] mb-4">
               EARLY ACCESS
             </p>
-            <ParallaxText speed={0.1}>
-              <h2 className="text-display-lg text-[var(--color-inverse-ink)] max-w-3xl mx-auto mb-6">
+            <ParallaxText speed={0.05}>
+              <h2 className="text-display-lg text-[var(--color-inverse-ink)] max-w-3xl mx-auto my-10">
                 Be the first to predict the future
               </h2>
             </ParallaxText>

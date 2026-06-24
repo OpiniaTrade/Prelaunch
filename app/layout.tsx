@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     { name: "Ramanshu Sharan Mishra", url: "https://www.ramspace.fun" },
   ],
   creator: "Opinia",
-  metadataBase: new URL("https://www.opinia.slugfeast.fun"),
+  metadataBase: new URL("https://opinia.slugfeast.fun"),
   alternates: {
     canonical: "/",
   },
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     title: "Opinia — Turn Predictions Into Real-World Rewards",
     description:
       "Predict the future of your favorite creators. Earn exclusive rewards, VIP show tickets and access exclusive content by showing your fandom.",
-    url: "https://www.opinia.slugfeast.fun",
+    url: "https://opinia.slugfeast.fun",
     siteName: "Opinia",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://www.opinia.slugfeast.fun/og.png",
+        url: "https://opinia.slugfeast.fun/og.png",
         width: 1200,
         height: 630,
         alt: "Opinia — Predict the future of your favorite creators",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "Predict the future of your favorite creators. Earn exclusive rewards, VIP show tickets and access exclusive content by showing your fandom.",
     site: "@RamanshuSharan",
     creator: "@RamanshuSharan",
-    images: ["https://www.opinia.slugfeast.fun/og.png"],
+    images: ["https://opinia.slugfeast.fun/og.png"],
   },
   icons: {
     icon: "/favicon.ico",

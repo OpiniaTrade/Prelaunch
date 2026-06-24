@@ -244,8 +244,9 @@ export default function RopeCharacter() {
     expression === "confused" ? "neutral" : expression === "wishful" ? "excited" : "excited";
 
   return (
-    <div className="fixed left-4 md:left-8 top-0 bottom-0 z-40 pointer-events-none">
-      {/* Chain — draggable hit area */}
+    <>
+    {/* Rope — behind page content */}
+    <div className="fixed left-4 md:left-8 top-0 bottom-0 z-0 pointer-events-none">
       <div
         className="absolute left-[48px] top-0 bottom-[190px] overflow-hidden pointer-events-auto"
         style={{
@@ -265,6 +266,10 @@ export default function RopeCharacter() {
           <ChainLinks />
         </div>
       </div>
+    </div>
+
+    {/* Characters — above everything */}
+    <div className="fixed left-4 md:left-8 top-0 bottom-0 z-[9990] pointer-events-none">
 
       {/* Main puller */}
       <div className="absolute left-0 bottom-0" style={{
@@ -335,6 +340,7 @@ export default function RopeCharacter() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
